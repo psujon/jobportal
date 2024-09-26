@@ -17,6 +17,9 @@ const corsOption = {
 }
 app.use(cors());
 
+app.get('/', (req, res)=>{
+    res.send("success");
+})
 
 
 app.listen(port, () => {
