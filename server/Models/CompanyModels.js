@@ -1,38 +1,26 @@
 
 import mongoose from 'mongoose';
 
-const JobSchema = mongoose.Schema({
-    title:{
+const CompanySchema = mongoose.Schema({
+    name:{
         type:String,
         required:true
     },
     description:{
         type:String,
-        required:true
     },
-    requirement:{
+    website:{
         type:String,
-        required:true
-    },
-    salary:{
-        type:Number,
-        required:true
     },
     location:{
+        type:string,
+    },
+    logo:{
         type:String,
-        required:true
     },
-    jobType:{
-        type:String,
-        required:true
-    },
-    position:{
-        type:Number,
-        required:true
-    },
-    company:{
-        type:mongoose.Schema.Types.ObjectId, 
-        ref:'Company',
+    userId:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref: "User",
         required:true
     },
     created_by:{
@@ -46,4 +34,4 @@ const JobSchema = mongoose.Schema({
     },
 } , {timestamps:true});
 
-export const Job = mongoose.model('Job', JobSchema);
+export const Company = mongoose.model('Company', CompanySchema);
