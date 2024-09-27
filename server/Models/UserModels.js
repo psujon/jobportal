@@ -23,16 +23,18 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     profile:{
-        bio:{type:string},
-        skills:{type:string},
-        resume:{type:string},
-        resumeOriginName:{type:string},
+        bio:{type:String},
+        skills:{type:String},
+        resume:{type:String},
+        resumeOriginName:{type:String},
         company:{type:mongoose.Schema.Types.ObjectId, ref:'Company'},
         profilePhoto:{
-            type:string,
+            type:String,
             default:''
         }
     }
 }, {timestamps:true});
 
-export const User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
+
+export default User;

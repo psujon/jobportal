@@ -5,6 +5,7 @@ const port = process.env.port || 5150;
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import connectDb from './Utilities/db.js';
+import userRoutes from '../server/Routes/userRoutes.js'
 dotenv.config({});
 
 app.use(express.json());
@@ -17,9 +18,9 @@ const corsOption = {
 }
 app.use(cors());
 
-app.get('/', (req, res)=>{
-    res.send("success");
-})
+// api start
+
+app.use("/api/v1/user", userRoutes)
 
 
 app.listen(port, () => {
